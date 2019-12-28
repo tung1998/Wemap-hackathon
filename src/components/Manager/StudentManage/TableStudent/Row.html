@@ -1,0 +1,48 @@
+<tr v-if="onEditing" role="row" class="odd">
+  <td class="index">
+    {{index}}
+  </td>
+  <td class="studentID">
+    <input type="text" class="form-control input-block" v-model="rowData.studentID" name="studentID" />
+  </td>
+  <td class="name">
+    <input type="text" class="form-control input-block" v-model="rowData.name" name="name" />
+  </td>
+  <td class="dateOfBirth">
+    <input type="date" class="form-control input-block" v-model="rowData.dateOfBirth" name="dateOfBirth" />
+  </td>
+  <td class="sex">
+    <input type="text" class="form-control input-block" v-model="rowData.sex" name="sex" />
+  </td>
+  <td class="classMajor">
+    <input type="text" class="form-control input-block" v-model="rowData.classMajor" name="classMajor" />
+  </td>
+  <td class="major">
+    <input type="text" class="form-control input-block" v-model="rowData.major" name="major" />
+  </td>
+  <td class="actions text-center">
+    <a class="on-editing save-row" @click="rowSaveClick" title="Lưu thông tin">
+      <i class="fas fa-save"></i>
+    </a>
+    <a class="on-editing cancel-row" @click="rowCancelClick" title="Hủy chỉnh sửa">
+      <i class="fas fa-times"></i>
+    </a>
+  </td>
+</tr>
+<tr v-else role="row" class="odd" @click="rowClick" title="Chi tiết">
+  <td class="index">{{index+1}}</td>
+  <td class="studentID">{{Student.studentID}}</td>
+  <td class="name">{{Student.name}}</td>
+  <td class="dateOfBirth">{{Student.dateOfBirth}}</td>
+  <td class="sex">{{Student.sex}}</td>
+  <td class="classMajor">{{Student.classMajor}}</td>
+  <td class="major">{{Student.major}}</td>
+  <td class="actions text-center">
+    <a class="on-default edit-row" @click="rowEditClick" title="Chỉnh sửa thông tin">
+      <i class="fas fa-pencil-alt"></i>
+    </a>
+    <a class="on-default remove-row" @click="rowRemoveClick" title="Xóa thông tin">
+      <i class="far fa-trash-alt"></i>
+    </a>
+  </td>
+</tr>

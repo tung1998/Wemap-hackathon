@@ -1,0 +1,100 @@
+<div class="body">
+    <header class="header">
+      <div class="logo-container">
+        <a href="/" class="logo"> <img src="@/assets/img/logo.png" width="75" height="35" alt="Porto Admin"> </a>
+        <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
+          data-fire-event="sidebar-left-opened"> <i class="fas fa-bars" aria-label="Toggle sidebar"></i> </div>
+      </div>
+      <div class="header-right">
+        <span class="separator"></span>
+  
+        <div id="userbox" class="userbox">
+          <a href="#" data-toggle="dropdown">
+            <figure class="profile-picture">
+              <i class="fas fa-user"></i>
+            </figure>
+            <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+              <span class="name">{{username}}</span>
+              <span class="role">{{name.name}}</span>
+            </div>
+  
+            <i class="fa custom-caret"></i>
+          </a>
+  
+          <div class="dropdown-menu">
+            <ul class="list-unstyled mb-2">
+              <li class="divider"></li>
+              <li>
+                <router-link role="menuitem" tabindex="-1" :to="{name: 'managerProfile'}"><i class="fas fa-user"></i> My Profile</router-link>
+              </li>
+              <li>
+                <a role="menuitem" tabindex="-1" href="#" @click="logout"><i class="fas fa-power-off"></i> Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end: search & user box -->
+    </header>
+    <!-- end: header -->
+  
+    <div class="inner-wrapper">
+      <!-- start: sidebar -->
+      <aside id="sidebar-left" class="sidebar-left">
+  
+        <div class="sidebar-header">
+          <div data-toggle-class="sidebar-left-collapsed" data-target="html"
+            data-fire-event="sidebar-left-toggle">
+            <i aria-label="Toggle sidebar"></i>
+          </div>
+        </div>
+  
+        <div class="nano has-scrollbar">
+          <div class="nano-content" tabindex="0" style="margin-right: -17px;">
+            <nav id="menu" class="nav-main" role="navigation">
+  
+              <ul class="nav nav-main">
+                <li>
+                  <router-link class="nav-link" :to="{name:'page'}">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Dashboard</span>
+                  </router-link>
+                </li>
+                <li class="nav-parent">
+                  <router-link class="nav-link" :to="{name: 'studentProfile'}">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <span>Thông tin sinh viên</span>
+                  </router-link>
+                </li>
+                <li class="nav-parent">
+                  <router-link class="nav-link" :to="{name:'registerExam'}">
+                    <i class="fas fa-tasks" aria-hidden="true"></i>
+                    <span>Đăng ký thi</span>
+                  </router-link>
+                </li>
+                <li class="nav-parent">
+                  <router-link class="nav-link" :to="{name: 'studentPrint'}">
+                    <i class="fas fa-print" aria-hidden="true"></i>
+                    <span>In phiếu thi</span>
+                  </router-link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="nano-pane" style="display: block; opacity: 1; visibility: visible;">
+            <div class="nano-slider" style="height: 20px;"></div>
+          </div>
+        </div>
+  
+      </aside>
+      <!-- end: sidebar -->
+  
+      <section role="main" class="content-body">
+        <header class="page-header">
+          <h2>ExamREG - Examination Online System</h2>
+        </header>
+        <router-view />
+      </section>
+    </div>
+  </div>
+  

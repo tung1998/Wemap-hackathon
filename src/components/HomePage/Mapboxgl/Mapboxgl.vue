@@ -11,7 +11,8 @@ export default {
   name: "Mapboxgl",
   data() {
     return {
-      locationPoint: location1Star.concat(location2Star).concat(location3Star)
+      locationPoint: location1Star.concat(location2Star).concat(location3Star),
+      locationOnShow: {}
     };
   },
   mounted
@@ -21,15 +22,10 @@ export default {
 function mounted() {
   resizeMap(this);
   let myMap = initMap();
-  myMap.addControl(
-    new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true
-      },
-      trackUserLocation: true
-    })
-  );
+  // let myLayer = initLayer(myMap);
   renderMarkers(this.locationPoint, myMap);
+
+  initEvent(this);
 }
 
 function initMap() {
@@ -40,7 +36,14 @@ function initMap() {
     style: api,
     center: [105.8227015, 21.0382399],
     zoom: 11
-  });
+  }).addControl(
+    new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true
+    })
+  );
 }
 
 function resizeMap(vue) {
@@ -53,10 +56,26 @@ function resizeMap(vue) {
 function renderMarkers(datas, map) {
   datas.forEach(data => {
     var el = document.createElement("div");
+    el.data = data;
     el.className = data.properties.className;
-    el.style.backgroundImage = `url('${require('../../../assets/img/location/'+data.properties.imgName)}')`
+    el.style.backgroundImage = `url('${require("../../../assets/img/location/" +
+      data.properties.imgName)}')`;
     // make a marker for each feature and add to the map
     new mapboxgl.Marker(el).setLngLat(data.geometry.coordinates).addTo(map);
+  });
+}
+
+function initEvent(vue) {
+  $(".marker").on("click", ev => {
+    vue.locationOnShow = ev.currentTarget.data;
+    console.log(ev.currentTarget.data)
+    if (vue.$route.name == "map")
+      vue.$router.push({
+        name: "locationInfo",
+        params: {
+          locationData: vue.locationOnShow
+        }
+      });
   });
 }
 </script>

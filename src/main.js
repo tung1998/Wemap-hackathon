@@ -31,6 +31,7 @@ require('@/assets/vendor/pnotify/pnotify.custom')
 require('@/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker')
 require('@/assets/js/theme.js')
 window.mapboxgl = require('mapbox-gl')
+window.L = require('leaflet')
 
 
 Vue.config.productionTip = false

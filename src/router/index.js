@@ -6,7 +6,7 @@ import LoginPage from '@/components/LoginPage/LoginPage.vue'
 import ErrorPage from '@/components/ErrorPage/ErrorPage.vue'
 import HomePage from '@/components/HomePage/WorkingPage/WorkingPage.vue'
 import Profile from '@/components/HomePage/Profile/Profile.vue'
-import MapPage from '@/components/HomePage/Map/Map.vue'
+import Mapboxgl from '@/components/HomePage/Mapboxgl/Mapboxgl.vue'
 
 //function 
 import {
@@ -33,9 +33,13 @@ const router = new Router({
     },
     {
       path: '/home',
-      name: 'home',
       component: HomePage,
       children: [{
+        path: '/',
+        name: 'home',
+        redirect: '/map',
+        // beforeEnter: beforeEnterLogin
+      },{
         path: '/profile',
         name: 'profile',
         component: Profile,
@@ -43,7 +47,7 @@ const router = new Router({
       }, {
         path: '/map',
         name: 'map',
-        component: MapPage,
+        component: Mapboxgl,
         // beforeEnter: beforeEnterLogin
       }]
       // beforeEnter: beforeEnterLogin

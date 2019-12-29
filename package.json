@@ -16,6 +16,7 @@
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "magnific-popup": "^1.1.0",
+    "mapbox-gl": "^1.6.1",
     "modernizr": "^3.8.0",
     "pnotify": "^4.0.0",
     "popper": "^1.0.1",

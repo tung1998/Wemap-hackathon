@@ -18,10 +18,10 @@ export default {
 };
 
 function logout() {
-  deleteAccessToken(this.$cookies.get('accessToken')).then(result=>{
-    this.$cookies.remove("accessToken");
-    this.$router.push({name:'login'})
-  }).catch(handleError)
+  this.$router.push({name:'login'})
+  // deleteAccessToken(this.$cookies.get('accessToken')).then(result=>{
+  //   this.$cookies.remove("accessToken");
+  // }).catch(handleError)
 }
 </script>
 

@@ -22,25 +22,26 @@ export default {
 
 function loginBtnClick() {
   console.log(this)
-  let { username, password } = this;
-  checkUserPassword({ username, password })
-    .then(result => {
-      if (result.data._id) {
-        this.$cookies.set("accessToken", result.data.accessToken);
-        if(result.data.userType==0)
-          this.$router.push({name: 'managerProfile'})
-        if(result.data.userType==1)
-          this.$router.push({name: 'studentProfile'})
-        alertNotifyDefaul(_SUCCESS.loginSuccess);
-      } else {
-        alertNotifyDefaul(_ERRORS.wrongUsernameOrPassword);
-        console.log(result.data.message);
-      }
-    })
-    .catch(error => {
-      alertNotifyDefaul(_ERRORS.somethingWrong);
-      console.log(error);
-    });
+  this.$router.push({name: 'map'})
+  // let { username, password } = this;
+  // checkUserPassword({ username, password })
+  //   .then(result => {
+  //     if (result.data._id) {
+  //       this.$cookies.set("accessToken", result.data.accessToken);
+  //       if(result.data.userType==0)
+  //         this.$router.push({name: 'managerProfile'})
+  //       if(result.data.userType==1)
+  //         this.$router.push({name: 'studentProfile'})
+  //       alertNotifyDefaul(_SUCCESS.loginSuccess);
+  //     } else {
+  //       alertNotifyDefaul(_ERRORS.wrongUsernameOrPassword);
+  //       console.log(result.data.message);
+  //     }
+  //   })
+  //   .catch(error => {
+  //     alertNotifyDefaul(_ERRORS.somethingWrong);
+  //     console.log(error);
+  //   });
 }
 </script>
 

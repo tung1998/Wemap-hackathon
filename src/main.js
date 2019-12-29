@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+
 import './assets/vendor/bootstrap/css/bootstrap.css';
 /* @import 'assets/vendor/animate/animate.css'; */
 import './assets/vendor/font-awesome/css/fontawesome-all.min.css';
@@ -16,6 +17,7 @@ import './assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css'
 import "./assets/vendor/pnotify/pnotify.custom.css";
 import './assets/css/theme.css';
 import './assets/css/custom.css';
+//map
 
 
 //import js
@@ -26,7 +28,7 @@ window.PNotify = require('pnotify/dist/es/PNotify')
 require('@/assets/vendor/pnotify/pnotify.custom')
 require('@/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker')
 require('@/assets/js/theme.js')
-
+window.mapboxgl = require('mapbox-gl')
 
 
 Vue.config.productionTip = false

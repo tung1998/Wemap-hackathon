@@ -11,9 +11,9 @@ import LocationInfo from '@/components/HomePage/LocationInfo/LocationInfo.vue'
 import TopRank from '@/components/HomePage/TopRank/TopRank.vue'
 
 //function 
-import {
-  checkAccessToken
-} from '../api/user'
+// import {
+//   checkAccessToken
+// } from '../api/api'
 import {
   handleError
 } from '../helper/function'

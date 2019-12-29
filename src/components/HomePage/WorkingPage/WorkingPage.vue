@@ -2,7 +2,6 @@
 
 <!--<script src="./Login.js"></script>-->
 <script>
-import {deleteAccessToken} from "../../../api/user";
 import { handleError } from '../../../helper/function';
 
 export default {

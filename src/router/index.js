@@ -9,6 +9,7 @@ import Profile from '@/components/HomePage/Profile/Profile.vue'
 import Mapboxgl from '@/components/HomePage/Mapboxgl/Mapboxgl.vue'
 import LocationInfo from '@/components/HomePage/LocationInfo/LocationInfo.vue'
 import TopRank from '@/components/HomePage/TopRank/TopRank.vue'
+import AddLocation from '@/components/HomePage/AddLocation/AddLocation.vue'
 
 //function 
 // import {
@@ -48,18 +49,23 @@ const router = new Router({
         name: 'map',
         component: Mapboxgl,
         children: [{
-          path: 'locationInfo/:name',
-          name: 'locationInfo',
-          component: LocationInfo,
-          props: true
-        },
-        {
-          path: 'top-rank',
-          name: 'top-rank',
-          component: TopRank,
-          props: true
-        },
-      ]
+            path: 'locationInfo/:name',
+            name: 'locationInfo',
+            component: LocationInfo,
+            props: true
+          },
+          {
+            path: 'top-rank',
+            name: 'top-rank',
+            component: TopRank,
+            props: true
+          }, {
+            path: 'add-location',
+            name: 'add-location',
+            component: AddLocation,
+            props: true
+          }
+        ]
       }]
     },
     {

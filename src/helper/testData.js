@@ -2,6 +2,7 @@ export {
   location3Star,
   location2Star,
   location1Star,
+  TopLocation
 }
 
 
@@ -129,4 +130,49 @@ const location1Star = [{
       description: "San Francisco, California"
     }
   }
+]
+
+
+const TopLocation = [{
+  type: "Feature",
+  geometry: {
+    type: "Point",
+    coordinates: [105.821017, 21.093331]
+  },
+  properties: {
+    star: 3.5,
+    title: "cầu nhật tân",
+    imgName: 'cầu nhật tân.jpg',
+    className: 'marker small',
+    description: "Đại học quốc gia Hà Nội"
+  }
+},
+{
+  type: "Feature",
+  geometry: {
+    type: "Point",
+    coordinates: [105.839266, 21.035416]
+  },
+  properties: {
+    star: 3.7,
+    title: "đường hoàng diệu",
+    imgName: 'hoàng diệu.jpg',
+    className: 'marker small',
+    description: "San Francisco, California"
+  }
+},
+{
+  type: "Feature",
+  geometry: {
+    type: "Point",
+    coordinates: [105.846731, 21.038283]
+  },
+  properties: {
+    star: 4.1,
+    title: "phố bích họa phùng hưng",
+    imgName: 'phố bích họa phùng hưng.jpg',
+    className: 'marker small',
+    description: "San Francisco, California"
+  }
+}
 ]

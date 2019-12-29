@@ -1,4 +1,4 @@
-#backBtn{
+#backBtn {
   position: absolute;
   z-index: 1;
   color: aliceblue;
@@ -7,12 +7,23 @@
   padding: 10px;
 }
 
-.card.find-round{
-z-index: 10;
+.card.find-round {
+  z-index: 10;
 }
 
+@media (max-width: 767px) {
+  .top-rank li {
+    height: 100px;
+  }
+}
 
-.marker.big{
+.top-rank .location-img {
+  background-size: cover;
+  max-width: 125px;
+  max-height: 100px;
+}
+
+.marker.big {
   background-size: cover;
   width: 70px;
   height: 70px;
@@ -21,7 +32,7 @@ z-index: 10;
   cursor: pointer;
 }
 
-.marker.medium{
+.marker.medium {
   background-size: cover;
   width: 50px;
   height: 50px;
@@ -30,7 +41,7 @@ z-index: 10;
   cursor: pointer;
 }
 
-.marker.small{
+.marker.small {
   background-size: cover;
   width: 30px;
   height: 30px;
@@ -38,4 +49,3 @@ z-index: 10;
   border: 1px red solid;
   cursor: pointer;
 }
-

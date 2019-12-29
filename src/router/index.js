@@ -47,7 +47,7 @@ const router = new Router({
         name: 'map',
         component: Mapboxgl,
         children: [{
-          path: 'locationInfo',
+          path: 'locationInfo/:name',
           name: 'locationInfo',
           component: LocationInfo,
           props: true

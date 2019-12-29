@@ -11,7 +11,7 @@ export default {
   name: "Mapboxgl",
   data() {
     return {
-      locationPoint: location3Star.concat(location2Star).concat(location1Star)
+      locationPoint: location1Star.concat(location2Star).concat(location3Star)
     };
   },
   mounted
@@ -38,8 +38,8 @@ function initMap() {
   return new mapboxgl.Map({
     container: "myMap",
     style: api,
-    center: [105.7827015, 21.0382399],
-    zoom: 16
+    center: [105.8227015, 21.0382399],
+    zoom: 11
   });
 }
 
@@ -54,7 +54,9 @@ function renderMarkers(datas, map) {
   datas.forEach(data => {
     var el = document.createElement("div");
     el.className = data.properties.className;
-    el.style.backgroundImage = `url("~@/assets/img/${data.properties.imgName}")`;
+    console.log(data.properties.imgName);
+
+    el.style.backgroundImage = `url('${require('../../../assets/img/location/'+data.properties.imgName)}')`
     console.log(el);
 
     // make a marker for each feature and add to the map

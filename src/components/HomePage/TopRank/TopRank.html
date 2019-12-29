@@ -1,70 +1,29 @@
 <section class="card top-rank">
-    <h3> Top 10 địa điểm được yêu thích nhất </h3>
-    <ul class="list-group">
-        <li class="list-group-item location-row">
-            <img class="col-4" src='https://dulichdaocoto.net/view-660/at_den-co-to-ban-da-di-tren-con-duong-tinh-yeu-chua_cfb00a0f3d17c4da3719d7cee6281433.jpg'>
-            <div class="col-8">
-                <h4 class="card-title">Con duong tinh yeu</h4>
-                <div class="pt-15">
-                    <div>
-                      <span class='card-text'>3.0</span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                      <span>&nbsp;(3)</span>
-                    </div>
-                  <div class="pt-15">
-                    <i class="fas fa-map-marker-alt" style='color: red'></i>
-                    <strong> &nbsp; Ngo 144, Xuan Thuy, Ha Noi</strong>
-                  </div>
-                </div>
-            </div>
+  <h3> Top 10 địa điểm được yêu thích nhất </h3>
+  <ul class="list-group">
+    <li v-for="location in TopLocation" class="list-group-item location-row">
+      <img :src="require('../../../assets/img/location/'+location.properties.imgName)" class="d-block w-100 location-img"
+          alt="test">
+      <div class="col-8">
+        <h4 class="card-title">{{location.properties.title}}</h4>
+        <div class="pt-15">
+          <div>
+            <span class='card-text'>3.0</span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span>&nbsp;(3)</span>
+          </div>
+          <!-- <div class="pt-15">
+            <i class="fas fa-map-marker-alt" style='color: red'></i>
+            <strong> &nbsp; Ngo 144, Xuan Thuy, Ha Noi</strong>
+          </div> -->
+        </div>
+      </div>
 
-        </li>
-        <li class="list-group-item location-row">
-            <img class="col-4" src='https://dulichdaocoto.net/view-660/at_den-co-to-ban-da-di-tren-con-duong-tinh-yeu-chua_cfb00a0f3d17c4da3719d7cee6281433.jpg'>
-            <div class="col-8">
-                <h4 class="card-title">Con duong tinh yeu</h4>
-                <div class="pt-15">
-                    <div>
-                      <span class='card-text'>3.0</span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                      <span>&nbsp;(3)</span>
-                    </div>
-                  <div class="pt-15">
-                    <i class="fas fa-map-marker-alt" style='color: red'></i>
-                    <strong> &nbsp; Ngo 144, Xuan Thuy, Ha Noi</strong>
-                  </div>
-                </div>
-            </div>
-        </li>
-        <li class="list-group-item location-row">
-            <img class="col-4" src='https://dulichdaocoto.net/view-660/at_den-co-to-ban-da-di-tren-con-duong-tinh-yeu-chua_cfb00a0f3d17c4da3719d7cee6281433.jpg'>
-            <div class="col-8">
-                <h4 class="card-title">Con duong tinh yeu</h4>
-                <div class="pt-15">
-                    <div>
-                      <span class='card-text'>3.0</span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                      <span>&nbsp;(3)</span>
-                    </div>
-                  <div class="pt-15">
-                    <i class="fas fa-map-marker-alt" style='color: red'></i>
-                    <strong> &nbsp; Ngo 144, Xuan Thuy, Ha Noi</strong>
-                  </div>
-                </div>
-            </div>
-        </li>
-      </ul>
+    </li>
+
+  </ul>
 </section>
-  

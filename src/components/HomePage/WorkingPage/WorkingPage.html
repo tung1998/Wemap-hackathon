@@ -20,26 +20,26 @@
         <div class="nano-content" tabindex="0" style="margin-right: -17px;">
           <nav id="menu" class="nav-main" role="navigation">
             <ul class="nav nav-main">
-              <li class="nav-main">
+              <li class="nav-main" @click="routeClick">
                 <router-link class="nav-link" :to="{name: 'map'}">
                   <i class="fas fa-map" aria-hidden="true"></i>
                   <span>Bản đồ</span>
                 </router-link>
               </li>
-              <li class="nav-main">
+              <li class="nav-main" @click="routeClick">
                 <router-link class="nav-link" :to="{name: 'add-location'}">
                   <i class="fas fa-plus" aria-hidden="true"></i>
                   <span>Thêm địa điểm</span>
                 </router-link>
               </li>
-              <li class="nav-main">
+              <li class="nav-main" @click="routeClick">
                 <router-link class="nav-link" :to="{name: 'top-rank'}">
                   <i class="fas fa-list-ol" aria-hidden="true"></i>
                   <span>Top 10</span>
                 </router-link>
               </li>
               <li class="nav-main">
-                <a class="nav-link" @click="logout">
+                <a class="nav-link" @click="logout" >
                   <i class="fas fa-sign-out-alt " aria-hidden="true"></i>
                   <span>Đăng xuất</span>
                 </a>
@@ -55,7 +55,7 @@
     </aside>
     <!-- end: sidebar -->
 
-    <section role="main" class="content-body" style="padding: 0px;">
+    <section role="main" class="content-body">
       <!-- <header class="page-header">
         <h2>Map</h2>
       </header> -->

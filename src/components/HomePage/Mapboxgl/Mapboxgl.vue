@@ -6,7 +6,7 @@ import {
   location2Star,
   location1Star
 } from "../../../helper/testData";
-import PeliasGeocoder from '../../../assets/js/pelias-geocoder.js';
+import PeliasGeocoder from "../../../assets/js/pelias-geocoder.js";
 
 export default {
   name: "Mapboxgl",
@@ -16,7 +16,7 @@ export default {
       locationOnShow: {}
     };
   },
-  methods:{
+  methods: {
     backBtnClick
   },
   mounted
@@ -40,31 +40,35 @@ function initMap() {
     style: api,
     center: [105.8227015, 21.0382399],
     zoom: 11
-  })
-  map.addControl(
-    new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true
-      },
-      trackUserLocation: true
-    })
-  )
-  var iconMarkerEl = document.createElement("div");
-iconMarkerEl.innerHTML = "<div class='marker-arrow'></div>" +
-  "<div class='marker-pulse'></div>";
-  map.addControl(new PeliasGeocoder({
-    params: { 'key': 'ZpIVSmYKNucNvxlHgRFRVBuj' },
-    url: 'https://apis.wemap.asia/geocode-1',
-    flyTo: 'hybrid',
-    wof: true,
-    useFocusPoint: true,
-    marker: {
-      icon: iconMarkerEl,
-      multiple: false
+  });
+  let mapControl = new mapboxgl.GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true
     },
-    customAttribution: 'Powered by <a style="color: rgb(0, 148, 255); text-decoration: none;" href="https://wemap.asia/" title="Attributions" target="_blank" style=""><img style="max-height: 1em;" src="https://wemap.asia/assets/images/favicon.png"/><b>WEMAP</b></a>'
-}));
-  return map
+    trackUserLocation: true
+  });
+  map.addControl(mapControl);
+  console.log(mapControl)
+  mapControl._container.parentNode.className="mapboxgl-ctrl-bottom-left"
+  var iconMarkerEl = document.createElement("div");
+  iconMarkerEl.innerHTML =
+    "<div class='marker-arrow'></div>" + "<div class='marker-pulse'></div>";
+  map.addControl(
+    new PeliasGeocoder({
+      params: { key: "ZpIVSmYKNucNvxlHgRFRVBuj" },
+      url: "https://apis.wemap.asia/geocode-1",
+      flyTo: "hybrid",
+      wof: true,
+      useFocusPoint: true,
+      marker: {
+        icon: iconMarkerEl,
+        multiple: false
+      },
+      customAttribution:
+        'Powered by <a style="color: rgb(0, 148, 255); text-decoration: none;" href="https://wemap.asia/" title="Attributions" target="_blank" style=""><img style="max-height: 1em;" src="https://wemap.asia/assets/images/favicon.png"/><b>WEMAP</b></a>'
+    })
+  );
+  return map;
 }
 
 function resizeMap(vue) {
@@ -95,13 +99,13 @@ function initEvent(vue) {
         params: {
           locationData: vue.locationOnShow,
           name: vue.locationOnShow.properties.title
-        },
+        }
       });
   });
 }
 
-function backBtnClick(){
-  this.$router.push({name:'map'})
+function backBtnClick() {
+  this.$router.push({ name: "map" });
 }
 </script>
 

@@ -17,10 +17,6 @@ export default {
   mounted
 };
 
-//methods
-function addStudent(data) {
-  this.StudentList.push(data);
-}
 //cycleHook
 function mounted() {
   resizeMap(this);

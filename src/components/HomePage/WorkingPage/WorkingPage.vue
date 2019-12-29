@@ -12,9 +12,15 @@ export default {
     };
   },
   methods: {
-    logout
+    logout,
+    routeClick
   }
 };
+
+function routeClick(){
+  console.log(1)
+  $('.toggle-sidebar-left').trigger('click')
+}
 
 function logout() {
   this.$router.push({name:'login'})

@@ -5,7 +5,9 @@ export default {
   name: "Mapboxgl",
   props: { locationData: Object },
   data() {
-    return {};
+    return {
+      address: ''
+    };
   },
   mounted
 };

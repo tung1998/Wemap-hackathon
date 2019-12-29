@@ -4,6 +4,9 @@ import Router from 'vue-router'
 //import page
 import LoginPage from '@/components/LoginPage/LoginPage.vue'
 import ErrorPage from '@/components/ErrorPage/ErrorPage.vue'
+import HomePage from '@/components/HomePage/WorkingPage/WorkingPage.vue'
+import Profile from '@/components/HomePage/Profile/Profile.vue'
+import MapPage from '@/components/HomePage/Map/Map.vue'
 
 //function 
 import {
@@ -28,16 +31,23 @@ const router = new Router({
       component: LoginPage,
       // beforeEnter: beforeEnterLogin
     },
-    // {
-    //   path: '/manager',
-    //   component: ManagerWorkingPage,
-    //   children: [{
-    //     name: 'manager',
-    //     path: '',
-    //     redirect: 'profile'
-    //   }],
-    //   // beforeEnter: beforeEnterStudent
-    // },
+    {
+      path: '/home',
+      name: 'home',
+      component: HomePage,
+      children: [{
+        path: '/profile',
+        name: 'profile',
+        component: Profile,
+        // beforeEnter: beforeEnterLogin
+      }, {
+        path: '/map',
+        name: 'map',
+        component: MapPage,
+        // beforeEnter: beforeEnterLogin
+      }]
+      // beforeEnter: beforeEnterLogin
+    },
     {
       name: "error",
       path: "*",

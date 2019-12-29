@@ -18,6 +18,7 @@ import "./assets/vendor/pnotify/pnotify.custom.css";
 import './assets/css/theme.css';
 import './assets/css/custom.css';
 import './assets/css/map.css';
+import './assets/css/index.css';
 //map
 
 

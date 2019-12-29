@@ -7,6 +7,7 @@ import ErrorPage from '@/components/ErrorPage/ErrorPage.vue'
 import HomePage from '@/components/HomePage/WorkingPage/WorkingPage.vue'
 import Profile from '@/components/HomePage/Profile/Profile.vue'
 import Mapboxgl from '@/components/HomePage/Mapboxgl/Mapboxgl.vue'
+import LocationInfo from '@/components/HomePage/LocationInfo/LocationInfo.vue'
 
 //function 
 import {
@@ -39,7 +40,7 @@ const router = new Router({
         name: 'home',
         redirect: '/map',
         // beforeEnter: beforeEnterLogin
-      },{
+      }, {
         path: '/profile',
         name: 'profile',
         component: Profile,
@@ -48,7 +49,11 @@ const router = new Router({
         path: '/map',
         name: 'map',
         component: Mapboxgl,
-        // beforeEnter: beforeEnterLogin
+        children: [{
+          path: '/locationInfo',
+          name: 'locationInfo',
+          component: LocationInfo,
+        }]
       }]
       // beforeEnter: beforeEnterLogin
     },

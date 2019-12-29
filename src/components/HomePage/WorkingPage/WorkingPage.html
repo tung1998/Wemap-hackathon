@@ -5,32 +5,6 @@
       <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
         data-fire-event="sidebar-left-opened"> <i class="fas fa-bars" aria-label="Toggle sidebar"></i> </div>
     </div>
-    <div class="header-right">
-      <span class="separator"></span>
-
-      <div id="userbox" class="userbox">
-        <a href="#" data-toggle="dropdown">
-          <figure class="profile-picture">
-            <i class="fas fa-user"></i>
-          </figure>
-          <div class="profile-info" data-lock-name="admin" data-lock-email="">
-            <span class="name">{{username}}</span>
-            <span class="role">Giảng viên</span>
-          </div>
-
-          <i class="fa custom-caret"></i>
-        </a>
-
-        <div class="dropdown-menu">
-          <ul class="list-unstyled mb-2">
-            <li class="divider"></li>
-            <li>
-              <a role="menuitem" tabindex="-1" href="#" @click="logout"><i class="fas fa-power-off"></i> Logout</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
     <!-- end: search & user box -->
   </header>
   <!-- end: header -->
@@ -46,17 +20,23 @@
         <div class="nano-content" tabindex="0" style="margin-right: -17px;">
           <nav id="menu" class="nav-main" role="navigation">
             <ul class="nav nav-main">
-              <li class="nav-parent">
+              <li class="nav-main">
                 <router-link class="nav-link" :to="{name: 'map'}">
                   <i class="fas fa-laptop" aria-hidden="true"></i>
                   <span>Bản đồ</span>
                 </router-link>
               </li>
-              <li class="nav-parent">
+              <li class="nav-main">
                 <router-link class="nav-link" :to="{name: 'map'}">
                   <i class="fas fa-check" aria-hidden="true"></i>
                   <span>Tìm quanh đây</span>
                 </router-link>
+              </li>
+              <li class="nav-main">
+                <a class="nav-link" @click="logout">
+                  <i class="fas fa-check" aria-hidden="true"></i>
+                  <span>đăng xuất</span>
+                </a>
               </li>
             </ul>
           </nav>
@@ -70,9 +50,9 @@
     <!-- end: sidebar -->
 
     <section role="main" class="content-body" style="padding: 0px;">
-      <header class="page-header">
+      <!-- <header class="page-header">
         <h2>Map</h2>
-      </header>
+      </header> -->
       <router-view />
     </section>
   </div>

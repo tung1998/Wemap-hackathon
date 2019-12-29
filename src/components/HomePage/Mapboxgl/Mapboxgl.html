@@ -2,9 +2,10 @@
   <div id="myMap" ref="myMap">
   </div>
   <div v-if="this.$route.name == 'map'" class="card find-round d-none">
-    <router-view/>
+    <router-view />
   </div>
   <div v-else class="card find-round">
-    <router-view/>
+    <div id="backBtn"><span @click="backBtnClick" class="fa fa-chevron-right"></span></div>
+    <router-view />
   </div>
 </section>

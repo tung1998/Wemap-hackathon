@@ -15,6 +15,9 @@ export default {
       locationOnShow: {}
     };
   },
+  methods:{
+    backBtnClick
+  },
   mounted
 };
 
@@ -68,15 +71,19 @@ function renderMarkers(datas, map) {
 function initEvent(vue) {
   $(".marker").on("click", ev => {
     vue.locationOnShow = ev.currentTarget.data;
-    console.log(ev.currentTarget.data)
-    if (vue.$route.name == "map")
+    if (vue.$route.params.name != vue.locationOnShow.properties.title)
       vue.$router.push({
         name: "locationInfo",
         params: {
-          locationData: vue.locationOnShow
-        }
+          locationData: vue.locationOnShow,
+          name: vue.locationOnShow.properties.title
+        },
       });
   });
+}
+
+function backBtnClick(){
+  this.$router.push({name:'map'})
 }
 </script>
 

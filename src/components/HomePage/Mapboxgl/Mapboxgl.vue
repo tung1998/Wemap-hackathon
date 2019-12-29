@@ -54,11 +54,7 @@ function renderMarkers(datas, map) {
   datas.forEach(data => {
     var el = document.createElement("div");
     el.className = data.properties.className;
-    console.log(data.properties.imgName);
-
     el.style.backgroundImage = `url('${require('../../../assets/img/location/'+data.properties.imgName)}')`
-    console.log(el);
-
     // make a marker for each feature and add to the map
     new mapboxgl.Marker(el).setLngLat(data.geometry.coordinates).addTo(map);
   });

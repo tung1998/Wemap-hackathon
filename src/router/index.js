@@ -30,7 +30,6 @@ const router = new Router({
       path: '/login',
       name: 'login',
       component: LoginPage,
-      // beforeEnter: beforeEnterLogin
     },
     {
       path: '/home',
@@ -39,12 +38,10 @@ const router = new Router({
         path: '/',
         name: 'home',
         redirect: '/map',
-        // beforeEnter: beforeEnterLogin
       }, {
         path: '/profile',
         name: 'profile',
         component: Profile,
-        // beforeEnter: beforeEnterLogin
       }, {
         path: '/map',
         name: 'map',
@@ -55,7 +52,6 @@ const router = new Router({
           component: LocationInfo,
         }]
       }]
-      // beforeEnter: beforeEnterLogin
     },
     {
       name: "error",

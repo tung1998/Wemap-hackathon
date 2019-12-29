@@ -25,6 +25,14 @@ function addStudent(data) {
 function mounted() {
   resizeMap(this);
   let myMap = initMap();
+  myMap.addControl(
+    new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true
+    })
+  );
   renderMarkers(this.locationPoint, myMap);
 }
 
@@ -41,19 +49,16 @@ function initMap() {
 
 function resizeMap(vue) {
   let windowHeight = window.innerHeight;
-  let pageHeaderHeight = $(".page-header").outerHeight();
+  // let pageHeaderHeight = $(".page-header").outerHeight();
   let headerHeight = $(".header").outerHeight();
-  vue.$refs.myMap.style.height = `${windowHeight -
-    pageHeaderHeight -
-    headerHeight}px`;
+  vue.$refs.myMap.style.height = `${windowHeight - headerHeight}px`;
 }
-
 
 function renderMarkers(datas, map) {
   datas.forEach(data => {
     var el = document.createElement("div");
     el.className = data.properties.className;
-    el.style.backgroundImage =`url("~@/assets/img/${data.properties.imgName}.png")`;
+    el.style.backgroundImage = `url("~@/assets/img/${data.properties.imgName}")`;
     console.log(el);
 
     // make a marker for each feature and add to the map

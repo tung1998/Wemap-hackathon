@@ -2,17 +2,17 @@
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
+        <img :src="require('../../../assets/img/location/'+locationData.properties.imgName)" class="d-block w-100"
+          alt="test">
+      </div>
+      <!-- <div class="carousel-item">
         <img src="https://upload.wikimedia.org/wikipedia/vi/e/e4/Hoang_hon_tren_Ho_Tay.jpg" class="d-block w-100"
           alt="test">
       </div>
       <div class="carousel-item">
         <img src="https://upload.wikimedia.org/wikipedia/vi/e/e4/Hoang_hon_tren_Ho_Tay.jpg" class="d-block w-100"
           alt="test">
-      </div>
-      <div class="carousel-item">
-        <img src="https://upload.wikimedia.org/wikipedia/vi/e/e4/Hoang_hon_tren_Ho_Tay.jpg" class="d-block w-100"
-          alt="test">
-      </div>
+      </div> -->
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -38,7 +38,7 @@
         </div>
       <div class="pt-15">
         <i class="fas fa-map-marker-alt" style='color: red'></i>
-        <strong> &nbsp; 144 Xuan Thuy, Cau Giay, Ha Noi</strong>
+        <strong> &nbsp; {{locationData.properties.description}}</strong>
       </div>
       <br>
       <ul class="list-group list-group-flush">

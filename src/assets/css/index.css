@@ -5,6 +5,7 @@
     width: 450px;
     height: 100%;
     background: white;
+    overflow: auto;
 }
 
 .location-title {
@@ -30,5 +31,71 @@
   }
 
   .star-report {
-      margin: 10px 0    ;
+      margin: 10px 0;
+      display: flex;
+  }
+
+  .progress {
+      width: 90%;
+  }
+
+  .mg-auto {
+      margin: 0 auto;
+  }
+  .mt-10 {
+      margin-top: 10px;
+  }
+  .mlr-10 {
+    margin: 0 10px;
+  }
+
+  .mr10 {
+      margin-right: 10px;
+  }
+
+  .flex-center {
+      display: flex;
+      justify-content: center;
+  }
+
+  .btn-review {
+      padding: 5px;
+      border-radius: 10px;
+      border: #e6e6e6 2px solid;
+  }
+
+  .title-detail {
+    font-weight: 400;
+    font-size: 20px;
+    padding: 5px 0;
+  }
+
+  .img-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: #e6e6e6 1px solid;
+      vertical-align: middle;
+  }
+
+  .comment-row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+  }
+
+  .user-title {
+      font-weight: 400;
+      font-size: 1.25em;
+  }
+
+  .comment-body {
+      padding: 10px 0;
+
+  }
+
+  .flex-end {
+      display: flex;
+      justify-content: flex-end;
   }

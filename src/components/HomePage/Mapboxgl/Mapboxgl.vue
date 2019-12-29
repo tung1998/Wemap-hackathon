@@ -1,34 +1,17 @@
 <template src='./Mapboxgl.html'></template>
 
 <script>
+import {
+  location3Star,
+  location2Star,
+  location1Star
+} from "../../../helper/testData";
+
 export default {
   name: "Mapboxgl",
   data() {
     return {
-      locationPoint: [
-        {
-          type: "Feature",
-          geometry: {
-            type: "Point",
-            coordinates: [105.7827015, 21.0382399]
-          },
-          properties: {
-            title: "Mapbox",
-            description: "Đại học quốc gia Hà Nội"
-          }
-        },
-        {
-          type: "Feature",
-          geometry: {
-            type: "Point",
-            coordinates: [105.8827015, 21.0382399]
-          },
-          properties: {
-            title: "Mapbox",
-            description: "San Francisco, California"
-          }
-        }
-      ]
+      locationPoint: location3Star.concat(location2Star).concat(location1Star)
     };
   },
   mounted
@@ -64,11 +47,14 @@ function resizeMap(vue) {
     pageHeaderHeight -
     headerHeight}px`;
 }
+
+
 function renderMarkers(datas, map) {
   datas.forEach(data => {
     var el = document.createElement("div");
-    el.className = "marker";
-    console.log(el)
+    el.className = data.properties.className;
+    el.style.backgroundImage =`url("~@/assets/img/${data.properties.imgName}.png")`;
+    console.log(el);
 
     // make a marker for each feature and add to the map
     new mapboxgl.Marker(el).setLngLat(data.geometry.coordinates).addTo(map);
@@ -77,12 +63,4 @@ function renderMarkers(datas, map) {
 </script>
 
 <style scoped>
-.marker {
-  background-image: url("/api/assets/img/logo.png");
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-}
 </style>

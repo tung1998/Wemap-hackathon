@@ -1,7 +1,7 @@
 <section class="card">
   <div id="myMap" ref="myMap">
   </div>
-  <div v-if="this.$route.name == 'map' and this.locationOnShow=={}" class="card find-round d-none">
+  <div v-if="this.$route.name == 'map'" class="card find-round d-none">
     <router-view />
   </div>
   <div v-else class="card find-round">

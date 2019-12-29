@@ -109,3 +109,14 @@
   .location-row {
       display: flex;
   }
+
+  .flex-between {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .btn-search {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+  }

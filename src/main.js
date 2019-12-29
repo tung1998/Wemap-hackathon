@@ -19,6 +19,8 @@ import './assets/css/theme.css';
 import './assets/css/custom.css';
 import './assets/css/map.css';
 import './assets/css/index.css';
+import './assets/css/pelias-geocoder.css';
+
 //map
 
 
@@ -26,12 +28,14 @@ import './assets/css/index.css';
 window.jQuery = require('jquery')
 window.$ = require('jquery')
 require('bootstrap')
+
 window.PNotify = require('pnotify/dist/es/PNotify')
 require('@/assets/vendor/pnotify/pnotify.custom')
 require('@/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker')
 require('@/assets/js/theme.js')
 window.mapboxgl = require('mapbox-gl')
 window.L = require('leaflet')
+
 
 
 Vue.config.productionTip = false

@@ -2,7 +2,6 @@
 
 <!--<script src="./Login.js"></script>-->
 <script>
-import { checkUserPassword } from "../../api/user";
 import { alertNotifyDefaul } from "../../helper/function";
 import { _ERRORS, _SUCCESS } from "../../helper/variable";
 

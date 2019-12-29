@@ -10,9 +10,9 @@ import Mapboxgl from '@/components/HomePage/Mapboxgl/Mapboxgl.vue'
 import LocationInfo from '@/components/HomePage/LocationInfo/LocationInfo.vue'
 
 //function 
-import {
-  checkAccessToken
-} from '../api/user'
+// import {
+//   checkAccessToken
+// } from '../api/api'
 import {
   handleError
 } from '../helper/function'

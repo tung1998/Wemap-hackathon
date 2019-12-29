@@ -6,6 +6,7 @@ import {
   location2Star,
   location1Star
 } from "../../../helper/testData";
+import PeliasGeocoder from '../../../assets/js/pelias-geocoder.js';
 
 export default {
   name: "Mapboxgl",
@@ -31,19 +32,36 @@ function mounted() {
 function initMap() {
   var api =
     "https://apis.wemap.asia/vector-tiles/styles/osm-bright/style.json?key=ZpIVSmYKNucNvxlHgRFRVBuj";
-  return new mapboxgl.Map({
+  let map = new mapboxgl.Map({
     container: "myMap",
     style: api,
     center: [105.8227015, 21.0382399],
     zoom: 11
-  }).addControl(
+  })
+  map.addControl(
     new mapboxgl.GeolocateControl({
       positionOptions: {
         enableHighAccuracy: true
       },
       trackUserLocation: true
     })
-  );
+  )
+  var iconMarkerEl = document.createElement("div");
+iconMarkerEl.innerHTML = "<div class='marker-arrow'></div>" +
+  "<div class='marker-pulse'></div>";
+  map.addControl(new PeliasGeocoder({
+    params: { 'key': 'ZpIVSmYKNucNvxlHgRFRVBuj' },
+    url: 'https://apis.wemap.asia/geocode-1',
+    flyTo: 'hybrid',
+    wof: true,
+    useFocusPoint: true,
+    marker: {
+      icon: iconMarkerEl,
+      multiple: false
+    },
+    customAttribution: 'Powered by <a style="color: rgb(0, 148, 255); text-decoration: none;" href="https://wemap.asia/" title="Attributions" target="_blank" style=""><img style="max-height: 1em;" src="https://wemap.asia/assets/images/favicon.png"/><b>WEMAP</b></a>'
+}));
+  return map
 }
 
 function resizeMap(vue) {

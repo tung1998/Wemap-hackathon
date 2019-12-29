@@ -1,9 +1,8 @@
-<template src='./TopRank.html'></template>
+<template src='./AddLocation.html'></template>
 
-<!--<script src="./Login.js"></script>-->
 <script>
 export default {
-  name: "top-rank",
+  name: "add-location",
 };
 </script>
 

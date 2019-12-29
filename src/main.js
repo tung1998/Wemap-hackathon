@@ -17,6 +17,7 @@ import './assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css'
 import "./assets/vendor/pnotify/pnotify.custom.css";
 import './assets/css/theme.css';
 import './assets/css/custom.css';
+import './assets/css/map.css';
 //map
 
 
